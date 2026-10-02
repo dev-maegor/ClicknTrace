@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>ClickTrace Network Inspector</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="../icons/icon32.png" alt="" class="brand-icon">
+      <div class="brand-copy">
+        <div class="brand-title">ClickTrace <span>Network Inspector</span></div>
+        <div class="brand-subtitle">Network activity correlated with page interactions</div>
+      </div>
+    </div>
+    <div id="status" class="status-pill idle"><span class="status-dot"></span><span class="status-label">Idle</span></div>
+  </header>
+
+  <section class="control-panel">
+    <div class="control-row">
+      <button id="start" class="primary"><span class="btn-dot"></span>Start recording</button>
+      <button id="stop" disabled>Stop</button>
+      <button id="clear">Clear</button>
+      <button id="export">Export JSON</button>
+    </div>
+    <div class="notice" id="notice">Select a normal webpage tab, then start recording.</div>
+  </section>
+
+  <section class="session-bar">
+    <div class="stat"><span class="stat-value" id="actionCount">0</span><span class="stat-label">Clicks</span></div>
+    <div class="stat"><span class="stat-value" id="requestCount">0</span><span class="stat-label">Requests</span></div>
+    <div class="stat"><span class="stat-value" id="errorCount">0</span><span class="stat-label">Errors</span></div>
+    <div class="session-host" id="host">No page selected</div>
+  </section>
+
+  <section class="list-toolbar">
+    <div class="list-title">
+      <strong>Activity</strong>
+      <span id="listHint">Requests grouped by click</span>
+    </div>
+    <label class="search">
+      <span>⌕</span>
+      <input id="search" type="search" placeholder="Filter requests or clicks">
+    </label>
+  </section>
+
+  <main>
+    <div id="empty" class="empty">
+      <div class="empty-mark">⌁</div>
+      <strong>No activity captured</strong>
+      <span>Start recording, then interact with the page. Requests observed shortly after a click will be grouped together.</span>
+    </div>
+    <div id="actions"></div>
+  </main>
+
+  <footer class="footer">
+    <span>Local inspection · no external capture server</span>
+    <span>v2.1.0</span>
+  </footer>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>
