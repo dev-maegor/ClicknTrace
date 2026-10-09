@@ -51,6 +51,6 @@ This policy will be updated if the extension's data practices or functionality c
 
 ## 9. Contact
 
-**Publisher:** ClickTrace Network Inspector
+**Publisher:** dev-maegor
 
 **Contact:** botriskyff@gmail.com
